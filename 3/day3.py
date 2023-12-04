@@ -1,6 +1,7 @@
 # Advent of Code
 import os
 from enum import IntEnum
+import time
 
 class PartNum:
     # Define the PartNum by its location in the data
@@ -258,13 +259,21 @@ def part_two(test):
     return result
 
 
+st = time.process_time()
+
 test = False
 result = part_one(test)
-print(f"Part 1 Result: {result}")
+#print(f"Part 1 Result: {result}")
 if test:
     check_test_result(result, 1)
 
 result = part_two(test)
-print(f"Part 2 Result: {result}")
+#print(f"Part 2 Result: {result}")
 if test:
     check_test_result(result, 2)
+
+et = time.process_time()
+
+# get execution time
+res = et - st
+print('CPU Execution time:', res, 'seconds')
