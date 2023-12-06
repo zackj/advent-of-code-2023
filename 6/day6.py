@@ -134,30 +134,29 @@ def part_two(data):
 test = False
 data = input_data(test,1)
 
-proc_start = process_time()
-perf_start = perf_counter() 
+st = process_time()
 
-test = False
+
 result = part_one(data)
 print(f"Part 1 Result: {result}")
 if test:
     check_test_result(result, 1)
 
-proc_end = process_time()
-perf_end = perf_counter()
-print(f"Part 1 proc time: {proc_end-proc_start}")
-print(f"Part 1 perf time: {perf_end-perf_start}")
 
-proc_start = process_time()
-perf_start = perf_counter() 
+et = process_time()
+t = et-st
+print(f"Part 1 time: {t:.2e}")
+
+
+st = process_time()
+
 
 result = part_two(data)
 print(f"Part 2 Result: {result}")
 if test:
     check_test_result(result, 2)
 
-proc_end = process_time()
-perf_end = perf_counter()
-print(f"Part 2 proc time: {proc_end-proc_start}")
-print(f"Part 2 perf time: {perf_end-perf_start}")
+et = process_time()
+t = et-st
+print(f"Part 2 time: {t:.2e}")
 
