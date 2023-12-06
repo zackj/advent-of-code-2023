@@ -1,7 +1,7 @@
 # Advent of Code
-import os
+from os import path
 from enum import IntEnum
-import time
+from time import process_time, perf_counter
 from math import sqrt, ceil, floor
 
 # A spaced string of numbers is like this: 
@@ -38,7 +38,7 @@ def input_data(test_mode:bool, i:int):
     else:
         file_name = "input_" + str(i) + ".txt"
         file_name = "input.txt"
-    input_path = os.path.curdir + os.path.sep + file_name
+    input_path = path.curdir + path.sep + file_name
     lines = open(input_path).readlines()
     lines = [s.rstrip("\n\r") for s in lines]
     return lines
@@ -122,34 +122,42 @@ def solve(times,distances):
     result = product_of_list(strategy_counts)
     return result
 
-def part_one(test):
-    data = input_data(test,1)
+def part_one(data):
     (times,distances) = parse_data(data)
     return solve(times,distances)
 
-def part_two(test):
-    data = input_data(test,1)
+def part_two(data):
     (times,distances) = parse_data_part_two(data)
     return solve(times,distances)
 
 
-st = time.process_time()
+test = False
+data = input_data(test,1)
+
+proc_start = process_time()
+perf_start = perf_counter() 
 
 test = False
-result = part_one(test)
+result = part_one(data)
 print(f"Part 1 Result: {result}")
 if test:
     check_test_result(result, 1)
 
+proc_end = process_time()
+perf_end = perf_counter()
+print(f"Part 1 proc time: {proc_end-proc_start}")
+print(f"Part 1 perf time: {perf_end-perf_start}")
 
-result = part_two(test)
+proc_start = process_time()
+perf_start = perf_counter() 
+
+result = part_two(data)
 print(f"Part 2 Result: {result}")
 if test:
     check_test_result(result, 2)
 
+proc_end = process_time()
+perf_end = perf_counter()
+print(f"Part 2 proc time: {proc_end-proc_start}")
+print(f"Part 2 perf time: {perf_end-perf_start}")
 
-et = time.process_time()
-# get execution time
-res = et - st
-if test == False:
-    print('CPU Execution time:', res, 'seconds')
