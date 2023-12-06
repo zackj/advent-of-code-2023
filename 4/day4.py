@@ -97,27 +97,6 @@ class Card:
         s = f"card: {self.i,self.w,self.a}"
         return s
 
-def deep_count_map(cards:list,idx:int,count_map:dict,add_self:bool):
-    c = cards[idx]
-    match_ct = len(c.matches())
-    if match_ct > 0 & add_self:
-        count_map[idx] = count_map[idx]+1
-    for i in range(1,1+match_ct):
-        deep_count_map(cards,idx+i,count_map,False)
-
-
-def gather_score_cards(cards):
-    # count_map keeps track of how many of each card
-    # You've won.
-    count_map = {}
-    for i in range(len(cards)):
-        count_map[i] = 0
-    
-    for i in range(len(cards)):
-        deep_count_map(cards,i,count_map,True)
-    
-    return count_map
-
 def gather_stack(cards):
     # count_map keeps track of how many of each card
     # You've won.
