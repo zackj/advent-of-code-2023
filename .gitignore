@@ -1,5 +1,9 @@
 .DS_Store
 
+# Problem description
+Problem.md
+input*.txt
+
 # VSCode
 *.vscode
 
