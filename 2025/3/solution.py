@@ -214,16 +214,3 @@ if (test):
 
 print(f"PART 2 Result: {str(result_2)}")
 print(f"PART 2 Time: {t_part_2:.2e}")
-
-
-
-
-
-
-
-from time import process_time
-st = process_time()
-# Do the work
-et = process_time()
-total_time = et-st
-print(f"Time: {total_time:.2e}")
