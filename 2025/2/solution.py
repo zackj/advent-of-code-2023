@@ -1,10 +1,5 @@
-from os import path
 from time import process_time
 import pathlib
-from operator import add, sub
-
-
-
 
 # Read in the data from a text file and strip out newlines.
 def input_data(test_mode: bool, i: int) -> str:
