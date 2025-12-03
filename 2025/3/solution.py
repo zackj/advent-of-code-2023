@@ -40,16 +40,6 @@ def parse_data(lines) -> list:
     return banks
 
 
-# Get the maximum frontmost digit and the maximum rearmost
-# digits.
-#
-# Case:
-# [1, 2, 3, 4, 5, 6] return (5, 6)
-def max_front_and_rear(b) -> tuple:
-    # b is a list
-    # first get the maximum in the list
-    maximum = max(b)
-
 # Find the maximum value of in_list and return
 # that value and the first index at which it appears
 #
