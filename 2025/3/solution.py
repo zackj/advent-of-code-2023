@@ -180,9 +180,9 @@ data = input_data(test, None)
 
 st = process_time()
 
-ranges = parse_data(data)
+banks = parse_data(data)
 
-result = process_part_1(ranges)
+result = process_part_1(banks)
 
 et = process_time()
 t_part_1 = et-st
@@ -199,7 +199,7 @@ print(f"PART 1 Time: {t_part_1:.2e}")
 
 st = process_time()
 
-result_2 = process_part_2(ranges)
+result_2 = process_part_2(banks)
 
 et = process_time()
 t_part_2 = et-st
