@@ -68,6 +68,8 @@ for k in range(iter_limit):
         p1 = points[i]
         direct_connections = p1.circuit_pts
         for j in range(num_points):
+            if k == 998:
+                print(f'998: i, j: {i}, {j}')
             # don't examine yourself.
             if i == j:
                 continue
@@ -88,6 +90,7 @@ for k in range(iter_limit):
     p1.circuit_pts.append(p2)
     p2.circuit_pts.append(p1)
 
+print("finished calculations")
 circuits = {}
 already_counted_points = set()
 
